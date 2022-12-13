@@ -1,0 +1,6 @@
+{
+	"scripts": {
+		"distribute": "distribute -b -i ./src/com.robertocpaes.pterodactyl.sdPlugin/ -o ./dist/",
+		"redistribute": "del-cli ./dist/com.robertocpaes.pterodactyl.streamDeckPlugin && npm run-script distribute"
+	}
+}
