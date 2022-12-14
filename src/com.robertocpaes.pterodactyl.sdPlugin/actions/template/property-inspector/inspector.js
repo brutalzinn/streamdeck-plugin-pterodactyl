@@ -19,7 +19,6 @@ PropertyInspector.onConnected((jsn) => {
 			const value = Utils.getFormValue(form);
 			PropertyInspector.sendToPlugin(value);
 			PropertyInspector.setSettings(value);
-			console.log("TESTE")
 		})
 	);
 });
@@ -28,19 +27,21 @@ PropertyInspector.onConnected((jsn) => {
  * Provide window level functions to use in the external window
  * (this can be removed if the external window is not used)
  */
-window.sendToInspector = (data) => {
-	console.log(data);
-};
+// window.sendToInspector = (data) => {
+// 	console.log(data);
+// };
 
-document.querySelector('#open-external').addEventListener('click', () => {
-  	var server = document.createElement("option");
-	server.text = "teste"
-	server.value = "teste"
-
-	var list = 	document.getElementById('server_list');
-	list.appendChild(server)
+document.querySelector('#refresh_servers').addEventListener('click', () => {
 
 	console.log("FSDFdsfdsfdsfs")
 
-	window.open('../../../external.html');
+  	// var server = document.createElement("option");
+	// server.text = "teste"
+	// server.value = "teste"
+
+	// var list = 	document.getElementById('pterodactyl_api_server');
+	// list.appendChild(server)
+
+
+	//window.open('../../../external.html');
 });
