@@ -1,5 +1,7 @@
 /// <reference path="../../../libs/js/property-inspector.js" />
 /// <reference path="../../../libs/js/utils.js" />
+/// <reference path="../../../mocks/mock.js" />
+
 
 PropertyInspector.onConnected((jsn) => {
 	const form = document.querySelector('#property-inspector');
@@ -17,6 +19,7 @@ PropertyInspector.onConnected((jsn) => {
 			const value = Utils.getFormValue(form);
 			PropertyInspector.sendToPlugin(value);
 			PropertyInspector.setSettings(value);
+			console.log("TESTE")
 		})
 	);
 });
@@ -30,5 +33,14 @@ window.sendToInspector = (data) => {
 };
 
 document.querySelector('#open-external').addEventListener('click', () => {
+  	var server = document.createElement("option");
+	server.text = "teste"
+	server.value = "teste"
+
+	var list = 	document.getElementById('server_list');
+	list.appendChild(server)
+
+	console.log("FSDFdsfdsfdsfs")
+
 	window.open('../../../external.html');
 });

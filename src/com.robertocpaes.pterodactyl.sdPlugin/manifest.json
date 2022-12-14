@@ -32,7 +32,7 @@
 				}
 			],
 			"Tooltip": "Envia um comando",
-			"UUID": "com.robertocpaes.pterodatily.action",
+			"UUID": "com.robertocpaes.pterodactyl.action",
 			"PropertyInspectorPath": "actions/template/property-inspector/inspector.html"
 		}
 	]

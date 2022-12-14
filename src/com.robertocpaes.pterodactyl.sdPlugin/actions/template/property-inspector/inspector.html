@@ -15,14 +15,32 @@
 		<div class="sdpi-wrapper">
 			<!--TODOZ: add one of each control from pi-samples to test Utils & CSS -->
 			<form id="property-inspector">
+
+				<div class="sdpi-item">
+					<div data-localize class="sdpi-item-label">Pterodactyl API URL</div>
+					<input
+						class="sdpi-item-value"
+						name="pterodactyl_api_url"
+						type="text"
+						value=""
+					/>
+				</div>
 				<div class="sdpi-item">
 					<div data-localize class="sdpi-item-label">ApiKey</div>
 					<input
 						class="sdpi-item-value"
-						name="name"
+						name="pterodactyl_api_key"
 						type="text"
 						value=""
 					/>
+				</div>
+		
+				<div class="sdpi-item">
+					<div class="sdpi-item-label" data-localize>Servidores</div>
+					<select id="pterodactyl_api_server" name="pterodactyl_api_server" data-localize class="sdpi-item-value" >
+						<option value="volvo">http://localhost:9090</option>
+						<option value="volvo">http://localhost:8080</option>
+					</select>
 				</div>
 
 				<div type="textarea" class="sdpi-item">
@@ -31,7 +49,7 @@
 					</div>
 					<div class="sdpi-item-value textarea">
 						<textarea
-							name="message"
+							name="pterodactyl_api_command"
 							type="textarea"
 							maxlength="50"
 							class="three-lines"
