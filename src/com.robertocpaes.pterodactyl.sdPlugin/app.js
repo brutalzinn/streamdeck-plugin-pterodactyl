@@ -12,15 +12,49 @@ StreamDeck.onConnected(({ actionInfo, appInfo, connection, messageType, port, uu
 	appInfoContext = appInfo
 });
 
-function execAction()
-{
+async function execAction(payload)
+{	
+	let settings = payload.settings
+	let apiKey = settings.pterodactyl_api_key
+	let apiUrl = settings.pterodactyl_api_url
+	let apiServer = settings.pterodactyl_api_server
+	let apiCommand = settings.pterodactyl_api_command
+	console.log(`Send command '${apiCommand}' to id '${apiServer}' with api url '${apiUrl}' and apiKey '${apiKey}'`)
+	let data = await getServerList(apiUrl, apiKey);
+	await sendServerCommand(apiUrl, apiKey, apiServer, apiCommand)
 
+	console.log('result' + JSON.stringify(data))
 }
 
-templateAction.onKeyUp((action) => {
-	console.log('Key Up' + JSON.stringify(action))
+async function getServerList(apiUrl, apiKey){
+ const response = await fetch(apiUrl + '/client', {
+	method: 'GET',
+   headers: {
+      'Content-Type': 'application/json',
+	  'Authorization': 'Bearer ' + apiKey
+    },
+})
+return response.json();
+}
+
+async function sendServerCommand(apiUrl, apiKey, serverId, command){
+ const response = await fetch(apiUrl + `/client/servers/${serverId}/command`, {
+   method: 'POST',
+   headers: {
+      'Content-Type': 'application/json',
+	  'Authorization': 'Bearer ' + apiKey
+    },
+	body: JSON.stringify({ "command": command })
+})
+}
+
+
+
+templateAction.onKeyUp(async (action) => {
+	await execAction(action.payload)
+	console.log('Key Up')
 });
 
-templateAction.onKeyDown(() => {
-	console.log('Key Down');
+templateAction.onKeyDown((action) => {
+	console.log('Key Down'+ JSON.stringify(action));
 });

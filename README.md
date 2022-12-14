@@ -1,5 +1,14 @@
-Um plugin para stream deck para enviar comandos para containers do https://pterodactyl.io/
+# Pterodactyl Stream Deck Command plugin
 
-Baseado em https://github.com/ChekTek/streamdeck-plugin-template-js-no-build
+A easily plugin to send commands to pterodactyl api 
 
-# Em construção
+![alt text](documentation/pterodactyl_logo_transparent.webp "Title")
+[About Pterodactyl](https://pterodactyl.io/)
+
+This project uses https://github.com/ChekTek/streamdeck-plugin-template-js-no-build as skeleton.
+
+# Under development. First stage.
+
+![alt text](documentation/enxada_console.png "Title")
+![alt text](documentation/streamdeck_software_view.png "Title")
+![alt text](documentation/streamdeck_device_view.jpg "Title")
