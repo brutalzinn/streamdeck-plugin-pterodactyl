@@ -15,20 +15,24 @@ StreamDeck.onConnected(({ actionInfo, appInfo, connection, messageType, port, uu
 
 async function execAction(payload)
 {	
-	let settings = payload.settings
-	let apiKey = settings.pterodactyl_api_key
-	let apiUrl = settings.pterodactyl_api_url
-	let apiServer = settings.pterodactyl_api_server
-	let apiCommand = settings.pterodactyl_api_command
-	console.log(`Send command '${apiCommand}' to id '${apiServer}' with api url '${apiUrl}' and apiKey '${apiKey}'`)
-	await  PterodactylApi.sendServerCommand(apiUrl, apiKey, apiServer, apiCommand)
+	let settings = payload.settings;
+	let apiKey = settings.pterodactyl_api_key;
+	let apiUrl = settings.pterodactyl_api_url;
+	let apiServer = settings.pterodactyl_api_server;
+	let apiCommand = settings.pterodactyl_api_command;
+	if(apiServer == "none"){
+	console.log("server not selected property.");
+	return;
+	}
+	console.log(`Send command '${apiCommand}' to id '${apiServer}' with api url '${apiUrl}' and apiKey '${apiKey}'`);
+	await PterodactylApi.sendServerCommand(apiUrl, apiKey, apiServer, apiCommand);
 }
 
 templateAction.onKeyUp(async (action) => {
-	console.log('Key Up')
+	console.log('Key Up');
 });
 
 templateAction.onKeyDown(async (action) => {
-	await execAction(action.payload)
+	await execAction(action.payload);
 	console.log('Key Down'+ JSON.stringify(action));
 });

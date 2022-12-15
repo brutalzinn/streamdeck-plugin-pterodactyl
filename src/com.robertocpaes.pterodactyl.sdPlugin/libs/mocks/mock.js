@@ -1,7 +1,8 @@
 //documentation https://dashflo.net/docs/api/pterodactyl/v1/#req_26cd9ef4a75540d6be8b4ef683e2b1a2
 //https://pterodactyl.file.properties/api/client
+class Mocks {
 
-const server_list_response = {
+static server_list_response = {
   "object": "list",
   "data": [
     {
@@ -73,4 +74,4 @@ const server_list_response = {
       "links": {}
     }
   }
-}
+}}

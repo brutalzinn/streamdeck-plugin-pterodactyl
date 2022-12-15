@@ -24,6 +24,7 @@
 						type="text"
 						value=""
 					/>
+					
 				</div>
 				<div class="sdpi-item">
 					<div data-localize class="sdpi-item-label">ApiKey</div>
@@ -36,22 +37,12 @@
 				</div>
 		
 				<div class="sdpi-item">
-					<div class="sdpi-item-label" data-localize>Servidores</div>
-					<select id="pterodactyl_api_server" name="pterodactyl_api_server" data-localize class="sdpi-item-value" >
-						<option value="a5ec39b0">EnxadaHost Minecraft Server</option>
+					<div  class="sdpi-item-label">Servers</div>
+					<select id="pterodactyl_api_server" name="pterodactyl_api_server" class="sdpi-item-value select" >
 					</select>
-					
+					<button class="sdpi-item-value" id="refresh_servers">Refresh</button>
 				</div>
-<div class="sdpi-item">
-					<div class="sdpi-item-label" data-localize>Button</div>
-					<button
-											class="sdpi-item-value"
 
-						id="refresh_servers"
-					>
-						Refresh
-					</button>
-				</div>
 				<div type="textarea" class="sdpi-item">
 					<div class="sdpi-item-label up20" data-localize>
 						Command
@@ -75,6 +66,8 @@
 		<script src="../../../libs/js/constants.js"></script>
 		<script src="../../../libs/js/event-emitter.js"></script>
 		<script src="../../../libs/js/api.js"></script>
+		<script src="../../../libs/mocks/mock.js"></script>
+		<script src="../../../libs/js/pterodactyl.js"></script>
 		<script src="../../../libs/js/property-inspector.js"></script>
 		<script src="inspector.js"></script>
 	</body>
