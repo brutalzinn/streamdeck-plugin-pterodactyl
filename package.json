@@ -1,8 +1,6 @@
 {
 	"scripts": {
-	    "debug":"npm run test && start http://localhost:23654/",
-		"distribute": "distribute -b -i ./src/com.robertocpaes.pterodactyl.sdPlugin/ -o ./dist/",
-		"redistribute": "del-cli ./dist/com.robertocpaes.pterodactyl.streamDeckPlugin && npm run-script distribute",
-		"test":"node debug_helper.js"
+		"debug": "npm run test && start http://localhost:23654/",
+		"test": "node debug_helper.js"
 	}
 }

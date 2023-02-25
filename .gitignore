@@ -1,7 +1,6 @@
 .DS_Store
 .idea/**
 /src/DistributionTool
-/src/DistributionTool
 com.robertocpaes.pterodactyl.streamDeckPlugin
 .vscode/**
 .history

@@ -4,11 +4,8 @@
 
 
 const templateAction = new Action('com.robertocpaes.pterodactyl.action');
-/**
- * The first event fired when Stream Deck starts
- */
- 
-StreamDeck.onConnected(({ actionInfo, appInfo, connection, messageType, port, uuid }) => {
+
+$SD.onConnected(({ actionInfo, appInfo, connection, messageType, port, uuid }) => {
 	console.log('Connected to Stream Deck!');
 	//let data = PterodactylApi.getServerList(appInfo.payload.settings)
 });
@@ -28,11 +25,15 @@ async function execAction(payload)
 	await PterodactylApi.sendServerCommand(apiUrl, apiKey, apiServer, apiCommand);
 }
 
-templateAction.onKeyUp(async (action) => {
+myAction.onKeyUp(async (action) => {
 	console.log('Key Up');
 });
 
-templateAction.onKeyDown(async (action) => {
+myAction.onKeyDown(async (action) => {
 	await execAction(action.payload);
 	console.log('Key Down'+ JSON.stringify(action));
+});
+
+myAction.onDialRotate(({ action, context, device, event, payload }) => {
+	console.log('Your dial code goes here!');
 });
